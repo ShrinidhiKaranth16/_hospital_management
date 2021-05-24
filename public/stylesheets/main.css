@@ -1,0 +1,36 @@
+.qwerty {
+	background:green;
+	color:black;
+}
+#delete-review{
+				display:inline;
+			}
+#delete-form{
+				display:inline;
+			}
+#doc
+{
+				width: 300px;
+				height: 200px;
+				padding: 5px;
+}
+#doc
+{
+				width: 300px;
+				height: 200px;
+				padding: 5px;
+}
+
+
+a:hover
+{
+	color:rgb(12, 86, 120);
+}
+.thumbnail img
+{
+	width:100%;
+}
+a
+{
+	color:white;
+}

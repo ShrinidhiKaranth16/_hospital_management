@@ -1,0 +1,65 @@
+<%- include("partial/header")%>
+<br>
+<div class ="container">
+	<div class="row">
+		<div class ="col-md-3">
+			<p class="lead">People Tree</p>
+			<div class="list-group">
+				<a  href="/doctors/<%=doctors._id%>"><li class="list-group-item  active ">Info 1</li></a>
+				<hr>
+				<a  href="/doctorsv2/<%=doctors._id%>"><li class="list-group-item active">Info 2</li></a>
+			</div>
+		</div>
+		<div class="col-md-9"> 
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%=doctors.image%>">
+				<div class="panel panel-default">
+				<div class="panel-body"><i><h4>
+		 		 Name: <%= doctors.name%>
+				</h4></i>
+	 	</div>
+   </div>
+				<p>
+  <em>Submitted by: <%= doctors.author.username %>, <%= moment(doctors.createdAt).fromNow() %></em>
+</p>
+				<%if(currentUser && doctors.author.id.equals(currentUser._id)){ %>
+				<a class="btn btn-warning"href="/doctors/<%= doctors._id %>/edit"> Update </a>
+				<form id="delete-form" action="/doctors/<%= doctors._id %>?_method=DELETE" method="post">
+					<button  class="btn btn-danger">
+						delete
+					</button>
+				</form>
+				<% } %>
+			</div>
+			<div class="well">
+				<div class=text-right>
+					<a class="btn btn-success"href="/doctors/<%= doctors._id %>/review/new"> Add a 		review</a>
+				</div>
+				<hr>
+				<% doctors.reviews.forEach(function(review){ %>	
+				<div class="row">
+					<div class = "col-md-12">
+						<strong><%= review.author.username %></strong>
+						<span class="pull-right"><%= moment(review.createdAt).fromNow() %></span>
+						 <p>
+						   <%= review.text%>
+					     </p>
+						<%if(currentUser && review.author.id.equals(currentUser._id)){ %>
+						<a class="btn btn-sm btn-warning"
+						   href="/doctors/<%= doctors._id%>/review/<%=review._id %>/edit">
+							Edit</a>
+						<form id="delete-form" action="/doctors/<%= doctors._id %>/review/<%= review._id%>?_method=delete" method="post">
+					<input type="submit" class="btn btn-sm btn-danger" value="Delete">
+				</form>
+					<%	} %>
+					</div>
+				</div>
+			<% }) %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<%- include("partial/footer")%>

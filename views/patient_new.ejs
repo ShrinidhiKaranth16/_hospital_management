@@ -1,0 +1,47 @@
+<%- include("partial/header")%>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align:center">Create a new Patient</h1>
+		<div style="width:30%; margin:25px auto">
+			<form action="/patients" method="post">
+	
+				<div class="form-group">
+					<input style="display:inline" class="form-control" type="text" name="name" placeholder="Enter the name here" >
+				</div>
+				
+					<div class="form-group">
+				<input class="form-control" type="text" name="image" placeholder="insert the image url" >
+						</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="number" name="age" placeholder="age">
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="text" name="gender" placeholder="Sex">
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="number" name="phone_no" placeholder="Contact Number">
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="number" name="room_no" placeholder="Room number">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="number" name="patient_id" placeholder="Patient ID">
+				</div>
+				
+				<div class="form-group">
+				<button class="btn btn-lg btn-default btn-block btn-primary">submit</button>
+						</div>
+				
+			</form>
+				<a style=" color:rgb(12, 86, 120);"href="/patients">Back</a>
+		</div>
+		
+	</div>
+</div>
+
+
+<%- include("partial/footer")%>

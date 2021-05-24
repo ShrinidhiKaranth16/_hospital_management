@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+		<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+		<link rel="stylesheet" href="/stylesheets/main.css">
+			<link rel="stylesheet" href="/stylesheets/navigation.css">
+	 <title> Hospital management</title>
+	</head>
+	<body>
+<header id="fh5co-header" role="banner">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header"> 
+				<!-- Mobile Toggle Menu Button -->
+				<a class="navbar-brand" href="/" style="font-family: 'Indie Flower', cursive;"><i class="fab fa-accusoft"></i>People Tree</a>
+				</div>
+				<div id="fh5co-navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+							<% if(!currentUser) { %>
+		  <li ><a href="/register"><span><strong>Register</strong> <span class="border"></span></span></a>
+			   <li ><a href="/login"><span><strong><i class="fas fa-sign-in-alt"></i>Login</strong> <span class="border"></span></span></a>
+			  <% } else { %>
+		<li> <a href="#"> <span><strong>Signed in as <%= currentUser.username %></strong> <span class="border"></span></span></a></li>
+		 <li><a  href="/logout"><span><strong><i class="fas fa-sign-out-alt"></i>Logout</strong> <span class="border"></span></span></a></li>
+		<% } %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+  
+		<br>
+		<hr>
+		<div class="container">
+			<%if(error && error.length>0){%>
+	<br>
+			<div class="alert alert-danger" role="alert"><%=error %></div>
+			<%}%>
+			<%if(success && success.length>0){%>
+			<br>
+			<div class="alert alert-success" role="alert"><%= success %></div>
+			<%}%>
+		</div>
+		

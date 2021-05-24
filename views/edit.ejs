@@ -1,0 +1,44 @@
+<%- include("partial/header")%>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align:center">Edit <%= doctor.name %></h1>
+		<div style="width:30%; margin:25px auto">
+			<form action="/doctors/<%= doctor._id%>?_method=PUT" method="post">
+	
+				<div class="form-group">
+					<input style="display:inline" class="form-control" type="text" name="doctor[name]" value="<%= doctor.name%>" >
+				</div>
+				
+				<div class="form-group">
+				<input class="form-control" type="text" name="doctor[image]" value="<%= doctor.image%>" >
+					</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="number" name="doctor[DID]" value="<%= doctor.DID%>">
+				</div>
+				s
+				<div class="form-group">
+					<input class="form-control" type="text" name="doctor[qualification]" value="<%= doctor.qualification%>">
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="number" name="doctor[contactNumber]" value="<%= doctor.contactNumber%>">
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control" type="number" name="doctor[salary]" value="<%= doctor.salary%>">
+				</div>
+				
+				<div class="form-group">
+				<button class="btn btn-lg btn-default btn-block btn-primary">submit</button>
+						</div>
+				
+			</form>
+				<a style=" color:rgb(12, 86, 120);"href="/doctors">Back</a>
+		</div>
+		
+	</div>
+</div>
+
+
+<%- include("partial/footer")%>

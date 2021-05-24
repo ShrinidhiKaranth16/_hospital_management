@@ -1,0 +1,43 @@
+<%- include("partial/header")%>
+<div class="ui main text container segment ">
+	<div class="ui huge header"><%= doctors.name%></div>
+		<div class="ui top attached ">
+			<div class="item">
+				<img class="ui centered rounded image"  src="<%=doctors.image%>">
+				<h3>
+				<b> Qualification:</b><b><i><u><%= doctors.qualification %></u></i></b>
+				</h3>
+					<div class="content">
+						<h3>
+							<b>Doctors ID:</b><b><i><u><%= doctors.DID %></u></i></b>
+						</h3>
+					</div>
+				<div class="content">
+					<h3>
+							<b>Sex:</b><b><i><u><%= doctors.sex %></u></i></b>
+					</h3>
+				</div>
+				<div class="content">
+					<h3>
+						<b>Salary:</b><b><i><u><%= doctors.salary %></u></i></b>
+					</h3>
+				</div>
+				<div class="content">
+					<h3>
+							<b>Contact Number:</b><b><i><u><%= doctors.contactNumber %></u></i></b>
+					</h3>
+				</div>
+				<p>
+					<a class="btn btn-success"href="/doctors/<%= doctors._id %>/review/new"> Add a review</a>
+				</p>
+				<div class="content">
+					<% doctors.reviews.forEach(function(review){ %>
+					   <p>
+						   <strong><%= review.author%></strong>--><%= review.text%>
+					</p>
+					<% }) %>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include("partial/footer")%>

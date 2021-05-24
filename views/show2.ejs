@@ -1,0 +1,58 @@
+<%- include("partial/header")%>
+<br>
+<div class ="container">
+	<div class="row">
+		<div class ="col-md-3">
+			<p class="lead">People Tree</p>
+		</div>
+		<div class="col-md-9"> 
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%=patient.image%>">
+				<p>
+  <em>Submitted by: <%= patient.author.username %>, <%= moment(patient.createdAt).fromNow() %></em>
+</p>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body"><i><h4>
+		 Name: <%= patient.name%>
+		</h4></i>
+	 	</div>
+   </div>
+					<div class="panel panel-default">
+	<div class="panel-body"><i><h4>
+		 age: <%= patient.age%>
+		</h4></i>
+	 	</div>
+   </div>
+	<div class="panel panel-default">
+	<div class="panel-body"><i><h4>
+	 Gender: <%= patient.gender%>
+		</h4></i>
+	 	</div>
+   </div>
+	<div class="panel panel-default">
+	<div class="panel-body"><i><h4>
+		 Contact Number: <%= patient.phone_no%>
+		</h4></i>
+	 	</div>
+   </div>
+	<div class="panel panel-default">
+	<div class="panel-body"><i><h4>
+		 Room Number: <%= patient.room_no%>
+		</h4></i>
+	 	</div>
+   </div>
+	<div class="panel panel-default">
+	<div class="panel-body"><i><h4>
+		ID: <%= patient.patient_id%>
+		</h4></i>
+	 	</div>
+   </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<%- include("partial/footer")%>

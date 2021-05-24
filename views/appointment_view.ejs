@@ -1,0 +1,32 @@
+<%- include("partial/header")%>
+<h1 style="text-align:center">
+	<%for(var i=0;i<1;i++){%>
+   All appointments for the date <%= moment(date).format("MMM Do YYYY");  %>
+	<% }%>
+</h1>
+<div class="container">
+	<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Token Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Contact Number</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <% appoint.forEach(function(appoint){%>
+	  <tr>
+      <td> <%=appoint.tokenNumber%></td>
+      <td> <%=appoint.name%></td>
+      <td> <%=appoint.contactNumber%></td>
+	 </tr>
+<% });%>
+    
+  </tbody>
+</table>
+</div>
+<div class="container" style="margin-left:600px;">
+	<a  href="/appoint" class="btn btn-lg btn-success">Book an appointment</a>
+
+</div>
+<%- include("partial/footer")%>

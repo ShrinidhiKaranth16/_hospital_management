@@ -1,0 +1,22 @@
+<%- include("partial/header")%>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align:center">Select a date to view the appointment List</h1>
+		<div style="width:30%; margin:25px auto">
+			<form action="/appoint/view" method="post">
+					<!-- Date input -->
+				<div class="form-group"> 
+        <label class="control-label" for="date">Date</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+      </div>
+      	<div class="form-group">
+				<button class="btn btn-lg btn-default btn-block btn-primary">submit</button>
+						</div>
+				
+				<a style=" color:rgb(12, 86, 120);"href="/doctors">Back</a>
+     </form>
+			
+     <!-- Form code ends --> 
+
+    </div>
+<%- include("partial/footer")%>

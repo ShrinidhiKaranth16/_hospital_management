@@ -1,0 +1,42 @@
+<%- include("partial/header")%>
+<br>
+<div class ="container">
+	<div class="row">
+		<div class ="col-md-3">
+			<p class="lead">People Tree</p>
+			<div class="list-group">
+				<a class="qwerty" href="/doctors/<%=doctors._id%>"><li class="list-group-item active ">Info 1</li></a> <hr>
+				<a class="qwerty" href="/doctorsv2/<%=doctors._id%>"><li class="list-group-item active">Info 2</li></a>
+			</div>
+		</div>
+		<div class="col-md-9"> 
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%=doctors.image%>">
+				<hr>
+				<div class="panel-group">
+  				<div class="panel panel-default">
+   				 <div class="panel-body">
+				<h4><i>Name: <%= doctors.name%></i></h4></div>
+  				</div>
+  				<div class="panel panel-default">
+   				 <div class="panel-body"><h4><i>Gender: <%= doctors.sex%></i></h4></div></div>
+  				</div>
+				<div class="panel panel-default">
+   				 <div class="panel-body"><h4><i> Id: <%= doctors.DID%></i></h4></div>
+  				</div>
+				<div class="panel panel-default">
+   				 <div class="panel-body"><h4><i> Qualification: <%= doctors.qualification%></i></h4></div>
+  				</div>
+				<div class="panel panel-default">
+   				 <div class="panel-body"><h4><i>Number: <%= doctors.contactNumber%></i></h4></div>
+  				</div>
+				<div class="panel panel-default">
+   				 <div class="panel-body"><h4><i> Salary: <%= doctors.salary%></i></h4></div>
+  				</div>
+		</div>
+	</div>
+</div>
+
+
+
+<%- include("partial/footer")%>
